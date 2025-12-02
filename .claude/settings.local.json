@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git.exe lfs install:*)",
+      "Bash(git.exe lfs track:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
