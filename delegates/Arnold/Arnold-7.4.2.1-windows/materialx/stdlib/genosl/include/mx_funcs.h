@@ -15,6 +15,38 @@
 // Support functions for OSL implementations of the MaterialX nodes.
 //
 
+float mx_extract(color in, int index)
+{
+    return in[index];
+}
+
+float mx_extract(color4 in, int index)
+{
+    if (index == 0) return in.rgb.r;
+    else if (index == 1) return in.rgb.g;
+    else if (index == 2) return in.rgb.b;
+    else return in.a;
+}
+
+float mx_extract(vector2 in, int index)
+{
+    if (index == 0) return in.x;
+    else return in.y;
+}
+
+float mx_extract(vector in, int index)
+{
+    return in[index];
+}
+
+float mx_extract(vector4 in, int index)
+{
+    if (index == 0) return in.x;
+    else if (index == 1) return in.y;
+    else if (index == 2) return in.z;
+    else return in.w;
+}
+
 float mx_ternary(int expr, float v1, float v2) { if (expr) return v1; else return v2; }
 color mx_ternary(int expr, color v1, color v2) { if (expr) return v1; else return v2; }
 color4 mx_ternary(int expr, color4 v1, color4 v2) { if (expr) return v1; else return v2; }
